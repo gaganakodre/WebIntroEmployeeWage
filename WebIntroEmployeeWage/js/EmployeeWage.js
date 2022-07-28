@@ -1,6 +1,6 @@
 ////////UC1-Check employee present or not////////////
 emp_Present=1;
-empCheck=(Math.random()*10)%2;
+empCheck=Math.floor(Math.random()*10)%2;
 if(empCheck==emp_Present)
 {
     console.log("Employee present");
@@ -13,21 +13,22 @@ else
 Emp_FullPresent=1;
 Emp_partTime=2;
 Emp_Rate_Per_Hr=20;
-empCheck=Math.floor(Math.random()*10)%3;
-if(empCheck==Emp_FullPresent)
+switch(empCheck)
 {
-    console.log("Employee present");
-    Emp_Hrs=8;
-}
-else if(empCheck==Emp_partTime)
-{
-    console.log("employee is in parttime");
-    Emp_Hrs=4;
-}
-else
-{
-    console.log("Employee Absent");
-    Emp_Hrs=0;
+    case Emp_FullPresent:
+        console.log("Employee in Full Time present");
+        Emp_Hrs=8;
+        break;
+    case Emp_FullPresent:
+        console.log("Employee partTime");
+        Emp_Hrs=4;
+        break;
+    default:
+        console.log("Employee Absent");
+        Emp_Hrs=0;
+        break;
 }
 EmpWage=Emp_Rate_Per_Hr*Emp_Hrs;
 console.log("Employee wage:"+EmpWage);
+
+
