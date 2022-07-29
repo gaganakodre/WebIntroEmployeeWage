@@ -95,6 +95,18 @@ while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
 }
 empWage=totalEmpHrs*WAGE_PER_HOURS;
 console.log("UC6 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
+///Array Helper fuctions////////////
+//UC-7A-calculate the total wage using array foreach a travesal or reduce method/////////
+let totEmpWage=0;
+function sum(dailyWage)
+{
+    totEmpWage+=dailyWage;
 
-
-
+}
+empDailyWageArray.forEach(sum);
+console.log("UC7A- TotalDay: " +totalWorkingDays + " Total hrs: " + totalEmpHrs +" EmployeeWage:" +totEmpWage);
+function totalWages(totalWage, dailyWage)
+{
+    return totalWage + dailyWage;
+}///reduce it will reduce array into single value
+console.log("UC7A -Emp Wage with reduce: " +empDailyWageArray.reduce(totalWages,0));
