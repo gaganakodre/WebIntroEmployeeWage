@@ -39,15 +39,32 @@ Emp_Hrs=getEmployeeWorkingHrs(empCheck);
 EmpWage=Emp_Rate_Per_Hr*Emp_Hrs;
 console.log("UC-3-refactor the code to implement the fuction")
 console.log("Employee wage:"+EmpWage);
+day=0;
 ////////////UC4-Calculate wage for a month assuming 20 working days////////
-for(let day=0;day<Num_of_Working_Days;day++)
+for(day=0;day<Num_of_Working_Days;day++)
 {
-    
+    empCheck=Math.floor(Math.random()*10)%3;
     Emp_Hrs+=getEmployeeWorkingHrs(empCheck);
+    console.log("employeewage per day"+ day +"\tis:"+(EmpWage+=Emp_Hrs*Emp_Rate_Per_Hr));
 }
 EmpWage+=Emp_Hrs*Emp_Rate_Per_Hr;
+//console.log("employeewage per day"+day+"\tis:"+EmpWage);
 console.log("UC4-Calculate wage for a month assuming 20 working days so that The EmpWage For month="+EmpWage+ "And Emp hrous="+Emp_Hrs);
 
+///Uc5-Calculatin till mmamximum working hours and days reaches using while loop//////////
+const MAX_HRS_IN_MONTH=100;
+const MAX_NUM_OF_WORKING_DAYS=20;
+let totalEmphrs=0;
+let Total_Working_days=0;
+while(totalEmphrs<= MAX_HRS_IN_MONTH && Total_Working_days < MAX_NUM_OF_WORKING_DAYS)
+{
+    Total_Working_days++;
+    let empCheck2=Math.floor(Math.random()*10)%3;
+    totalEmphrs+=getEmployeeWorkingHrs(empCheck2)
+    
+}
+let Emp_Wage=totalEmphrs*Emp_Hrs;
+console.log("UC5-TotalDays: \t"+Total_Working_days  + "\tTotal_hours\t:"+totalEmphrs+"\tEmp wage\t:"+Emp_Wage);
 
 
 
