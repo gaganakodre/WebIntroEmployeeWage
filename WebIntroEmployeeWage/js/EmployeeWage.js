@@ -1,70 +1,81 @@
 ////////UC1-Check employee present or not////////////
-emp_Present=1;
-empCheck1=Math.floor(Math.random()*10)%2;
-if(empCheck1==emp_Present)
+const IS_ABSENT = 0
+let empCheck = Math.floor(Math.random() * 10) % 2;
+if (empCheck == IS_ABSENT) 
 {
-    console.log("Employee present");
-}
-else
-{
-    console.log("Employee Absent");
-}
+    console.log("UC1 Employee is Absent");
+    return;
+ } 
+ else
+  {
+     console.log("UC1 Employee is PRESENT")
+  }
 //////////////////UC2-to check parttime with full and absent//////////////////
-Emp_FullPresent=1;
-Emp_partTime=2;
-Emp_Full_Time_hrs=8;
-Emp_Part_Time_Hr=4;
-Num_of_Working_Days=20;
-Emp_Rate_Per_Hr=20;
-Emp_Hrs=0;
-empCheck=Math.floor(Math.random()*10)%3;
+const IS_PART_TIME=1;
+const IS_FULL_TIME=2;
+const PART_TIME_HRS=4;
+const FULL_TIME_HRS=8;
+const WAGE_PER_HOURS=20;
+let empHrs=0;
+empCheck= Math.floor(Math.random() * 10) % 3;
+switch(empCheck)
+{
+    case IS_PART_TIME:
+        empHrs=PART_TIME_HRS;
+        break;
+        case IS_FULL_TIME:
+            empHrs=FULL_TIME_HRS;
+            break;
+            default:
+                empHrs=0;
+
+}
+let empWage=empHrs*WAGE_PER_HOURS;
+console.log("UC2 empwage:"+empWage);
 ///////////UC-3refactor the code to write a fuctiion to get work hours/////////////
-function getEmployeeWorkingHrs(empCheck)
+function getWorkingHours(empCheck)
 {
     switch(empCheck)
     {
-        case Emp_FullPresent:
-            console.log("Employee in Full Time present");
-            return Emp_Full_Time_hrs;
-        case Emp_partTime:
-            console.log("Employee partTime");
-            return Emp_Part_Time_Hr;
-        default:
-            console.log("Employee Absent");
-            return 0;
+        case IS_PART_TIME:
+            return PART_TIME_HRS;
+            case IS_FULL_TIME:
+                return FULL_TIME_HRS;
+                default:
+                    return 0;
     }
 }
+empHrs=0;
+empCheck=Math.floor(Math.random() * 10) % 3;
+empHrs=getWorkingHours(empCheck);
+empWage=empHrs * WAGE_PER_HOURS;
+console.log("EMPWAGE: "+empWage);
 
-Emp_Hrs=getEmployeeWorkingHrs(empCheck);
-EmpWage=Emp_Rate_Per_Hr*Emp_Hrs;
-console.log("UC-3-refactor the code to implement the fuction")
-console.log("Employee wage:"+EmpWage);
-day=0;
 ////////////UC4-Calculate wage for a month assuming 20 working days////////
-for(day=0;day<Num_of_Working_Days;day++)
+NUM_OF_WORKING_DAYS=2;
+empHrs=0;
+for(let day=0;day<NUM_OF_WORKING_DAYS;day++)
 {
-    empCheck=Math.floor(Math.random()*10)%3;
-    Emp_Hrs+=getEmployeeWorkingHrs(empCheck);
-    console.log("employeewage per day"+ day +"\tis:"+(EmpWage+=Emp_Hrs*Emp_Rate_Per_Hr));
+    empCheck=Math.floor(Math.random() * 10) % 3;
+    empHrs+=getWorkingHours(empCheck); 
 }
-EmpWage+=Emp_Hrs*Emp_Rate_Per_Hr;
-//console.log("employeewage per day"+day+"\tis:"+EmpWage);
-console.log("UC4-Calculate wage for a month assuming 20 working days so that The EmpWage For month="+EmpWage+ "And Emp hrous="+Emp_Hrs);
-
-///Uc5-Calculatin till mmamximum working hours and days reaches using while loop//////////
+empWage=empHrs*WAGE_PER_HOURS;
+console.log(" UC4 Total hrs:"+ +empHrs+ "Emp wage: " + empWage);
+///Uc5-Calculating till mmamximum working hours and days reaches using while loop//////////
 const MAX_HRS_IN_MONTH=100;
-const MAX_NUM_OF_WORKING_DAYS=20;
-let totalEmphrs=0;
-let Total_Working_days=0;
-while(totalEmphrs<= MAX_HRS_IN_MONTH && Total_Working_days < MAX_NUM_OF_WORKING_DAYS)
+NUM_OF_WORKING_DAYS=10;
+let totalEmpHrs=0;
+let totalWorkingDays=0;
+while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
 {
-    Total_Working_days++;
-    let empCheck2=Math.floor(Math.random()*10)%3;
-    totalEmphrs+=getEmployeeWorkingHrs(empCheck2)
-    
+    totalWorkingDays++;
+    empCheck=Math.floor(Math.random() * 10) % 3;
+    totalEmpHrs+=getWorkingHours(empCheck);
 }
-let Emp_Wage=totalEmphrs*Emp_Hrs;
-console.log("UC5-TotalDays: \t"+Total_Working_days  + "\tTotal_hours\t:"+totalEmphrs+"\tEmp wage\t:"+Emp_Wage);
+empWage=totalEmpHrs*WAGE_PER_HOURS;
+console.log("UC5 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
+///////////UC-6 Store daily wage along with totalwage////////////
+
 
 
 
