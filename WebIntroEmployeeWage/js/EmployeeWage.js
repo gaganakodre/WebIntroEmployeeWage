@@ -62,7 +62,7 @@ for(let day=0;day<NUM_OF_WORKING_DAYS;day++)
 empWage=empHrs*WAGE_PER_HOURS;
 console.log(" UC4 Total hrs:"+ +empHrs+ "Emp wage: " + empWage);
 ///Uc5-Calculating till mmamximum working hours and days reaches using while loop//////////
-const MAX_HRS_IN_MONTH=100;
+MAX_HRS_IN_MONTH=100;
 NUM_OF_WORKING_DAYS=10;
 let totalEmpHrs=0;
 let totalWorkingDays=0;
@@ -76,8 +76,25 @@ empWage=totalEmpHrs*WAGE_PER_HOURS;
 console.log("UC5 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
 ///////////UC-6 Store daily wage along with totalwage////////////
 
-
-
+function calcDailyWage(empHrs)
+{
+    return empHrs*WAGE_PER_HOURS;
+}
+MAX_HRS_IN_MONTH=160;
+NUM_OF_WORKING_DAYS=20;
+totalEmpHrs=0;
+totalWorkingDays=0;
+let empDailyWageArray=new Array();
+while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
+{
+    totalWorkingDays++;
+    empCheck=Math.floor(Math.random() * 10) % 3;
+    totalEmpHrs+=getWorkingHours(empCheck);
+    totalEmpHrs+=empHrs;
+    empDailyWageArray.push(calcDailyWage(empHrs));
+}
+empWage=totalEmpHrs*WAGE_PER_HOURS;
+console.log("UC6 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
 
 
 
