@@ -110,3 +110,14 @@ function totalWages(totalWage, dailyWage)
     return totalWage + dailyWage;
 }///reduce it will reduce array into single value
 console.log("UC7A -Emp Wage with reduce: " +empDailyWageArray.reduce(totalWages,0));
+//UC7_B shiw the day along wiht daily wage using array map helper fuction////
+let dailyCntr=0;
+function mapDayWithWage(dailyWage)
+{
+    dailyCntr++;
+    return dailyCntr + " = " + dailyWage;
+}
+//map fuction will create new array from calling a fuction every array elements//
+let mapDayWithWageArr = empDailyWageArray.map(mapDayWithWage);
+console.log("uc7B daily wage map");
+console.log(mapDayWithWageArr);
