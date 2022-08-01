@@ -38,17 +38,17 @@ switch(empCheck)
 }
 let empWage=empHrs*WAGE_PER_HOURS;
 console.log("UC2 empwage:"+empWage);
-///////////UC-3refactor the code to write a fuctiion to get work hours/////////////
+///////////UC-3 refactor the code to write a fuctiion to get work hours/////////////
 function getWorkingHours(empCheck)
 {
     switch(empCheck)
     {
         case IS_PART_TIME:
             return PART_TIME_HRS;
-            case IS_FULL_TIME:
-                return FULL_TIME_HRS;
-                default:
-                    return 0;
+        case IS_FULL_TIME:
+            return FULL_TIME_HRS;
+        default:
+            return 0;
     }
 }
 empHrs=0;
@@ -71,14 +71,15 @@ for(day=0;day<NUM_OF_WORKING_DAYS;day++)
     empWageo=empHours*WAGE_PER_HOURS;
     console.log("day:"+day+"\tempwage:"+(empWageo));
     empArray.push(empWageo)
-    empWageHoursAndDayArray.push(//UC10-JS
+    empWageHoursAndDayArray.push(
+        //UC10-JS
         {
             dayNumOb : day,
-            empHoursOb : getWorkingHours(),
+            empHoursOb : empHours,
             wageOb : empWageo,
             toString()
             {
-                return "\nEmployee Wage Details Of Day:"+ this.dayNumOb + "Hours:"+this.empHoursOb + "Wage:"+ this.wageOb; 
+                return "\nEmployee Wage Details Of Day:"+ this.dayNumOb + "\tHours:"+this.empHoursOb + "\tWage:"+ this.wageOb; 
             }
             
         }
@@ -228,3 +229,32 @@ console.log("UC9B-NonTime work days: "+nonWorkingDaysArray);
 ///////////////////////////////UC-10 Ability to store the Day, Hours Worked and Wage Earned in a single object.///////////////////////////////
 
 console.log("UC10-Js Object Used to store the Day, Hours Worked and Wage Earned\n"+empWageHoursAndDayArray);
+///11A Calc total Wage and total hours worked///
+let TotalWage=(total,dailywage)=>
+{
+    return total += dailywage.wageOb; 
+}
+let totalHoursUsingArrow = empWageHoursAndDayArray.filter(daily=>daily.empHoursOb>0).reduce(TotalWage,0);
+console.log("UC11A- Total Hours Using Object And Seperate Arrow Function:",totalHoursUsingArrow)
+///////////////////////////////UC-11A Calc total Hours and total hours worked///////////////////////////////
+let getTotalHourUsingArrow=(total,dailywage)=>
+{
+    return total += dailywage.empHoursOb; 
+}
+let totalHoursArrow = empWageHoursAndDayArray.filter(daily=>daily.empHoursOb>0).reduce(getTotalHourUsingArrow,0);
+console.log("UC11A- Total Hours Using Object And Seperate Arrow Function:",totalHoursArrow)
+///////////////////////////////UC-11B. Show the full workings days using foreach///////////////////////////////
+console.log("UC11B- Show the full workings days using foreach using object and arrow function");
+empWageHoursAndDayArray.filter(dailyHoursAndWage=>dailyHoursAndWage.empHoursOb==8).forEach(
+    dailyHoursAndWage=>console.log("UC11B- Full workings days are:"+dailyHoursAndWage.dayNumOb)
+)
+///////////////////////////////UC-11C Show Part working days using Map by reducing to String Array///////////////////////////////
+console.log("UC11C- Show the PartTime workings days using Map using object and arrow function");
+let partTimeDaysUsingObject=empWageHoursAndDayArray.filter(dailyHoursAndWage=>dailyHoursAndWage.empHoursOb==4).map(
+    dailyHoursAndWage=>dailyHoursAndWage.toString()); 
+    console.log("UC11C- Total PartTime Using Object And Arrow Function:"+partTimeDaysUsingObject)
+    ///////////////////////////////UC-11C Non working days using Map FUnction///////////////////////////////
+console.log("UC11D- Show the Non workings days using Map function");
+let nonWorkingDaysUsingObject=empWageHoursAndDayArray.filter(dailyHoursAndWage=>dailyHoursAndWage.empHoursOb==0).map(
+    dailyHoursAndWage=>dailyHoursAndWage); 
+    console.log("UC11D- Non workings days using Map function:"+nonWorkingDaysUsingObject)

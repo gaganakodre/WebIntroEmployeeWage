@@ -1,0 +1,600 @@
+UC1 Employee is PRESENT
+UC2 empwage:0
+EMPWAGE: 0
+day:0   empwage:0
+day:1   empwage:160
+day:2   empwage:160
+day:3   empwage:160
+day:4   empwage:0
+day:5   empwage:80
+day:6   empwage:160
+day:7   empwage:160
+day:8   empwage:160
+day:9   empwage:160
+day:10  empwage:0
+day:11  empwage:160
+day:12  empwage:0
+day:13  empwage:160
+day:14  empwage:0
+day:15  empwage:80
+day:16  empwage:160
+day:17  empwage:0
+day:18  empwage:160
+day:19  empwage:0
+ UC-6array
+0,160,160,160,0,80,160,160,160,160,0,160,0,160,0,80,160,0,160,0
+ UC4 Total hrs:96Emp wage: 1920
+UC5 - total-days:10     total_hrs28     emp wage: 560
+UC6 - total-days:2      total_hrs200    emp wage: 4000
+UC7A- TotalDay: 2 Total hrs: 200 EmployeeWage:1920
+UC7A -Emp Wage with reduce: 1920
+uc7B daily wage map
+[
+  '1 = 0',    '2 = 160',  '3 = 160',
+  '4 = 160',  '5 = 0',    '6 = 80',
+  '7 = 160',  '8 = 160',  '9 = 160',
+  '10 = 160', '11 = 0',   '12 = 160',
+  '13 = 0',   '14 = 160', '15 = 0',
+  '16 = 80',  '17 = 160', '18 = 0',
+  '19 = 160', '20 = 0'
+]
+UC7C - daily wage filter when fulltime wage earned
+[
+  '2 = 160',  '3 = 160',
+  '4 = 160',  '7 = 160',
+  '8 = 160',  '9 = 160',
+  '10 = 160', '12 = 160',
+  '14 = 160', '17 = 160',
+  '19 = 160'
+]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 2 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 13
+Uc8 empwage map totalhrs: 19    TotalWage: 4000
+UC9A-Total Wage Using wage map object:
+19 TotalWage:4000
+UC9A-Total Hours Using Hours map object:
+ 96
+HrsMap:
+0 160 160 160 0 80 160 160 160 160 0 160 0 160 0 80 160 0 160 0
+UC9B-FullTime work days: 1,2,3,6,7,8,9,11,13,16,18
+UC9B-PartTime work days: 5,15
+UC9B-NonTime work days: 0,4,10,12,14,17,19
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:0 Wage:0,
+Employee Wage Details Of Day:1  Hours:8 Wage:160,
+Employee Wage Details Of Day:2  Hours:8 Wage:160,
+Employee Wage Details Of Day:3  Hours:8 Wage:160,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:5  Hours:4 Wage:80,
+Employee Wage Details Of Day:6  Hours:8 Wage:160,
+Employee Wage Details Of Day:7  Hours:8 Wage:160,
+Employee Wage Details Of Day:8  Hours:8 Wage:160,
+Employee Wage Details Of Day:9  Hours:8 Wage:160,
+Employee Wage Details Of Day:11 Hours:8 Wage:160,
+Employee Wage Details Of Day:13 Hours:8 Wage:160,
+Employee Wage Details Of Day:14 Hours:0 Wage:0,
+Employee Wage Details Of Day:15 Hours:4 Wage:80,
+Employee Wage Details Of Day:16 Hours:8 Wage:160,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:8 Wage:160,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
+UC11A- Total Hours Using Object And Seperate Arrow Function: 1920
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is PRESENT
+UC2 empwage:80
+EMPWAGE: 0
+day:0   empwage:0
+day:1   empwage:80
+day:2   empwage:80
+day:3   empwage:80
+day:4   empwage:160
+day:5   empwage:0
+day:6   empwage:0
+day:7   empwage:160
+day:8   empwage:0
+day:9   empwage:0
+day:10  empwage:0
+day:11  empwage:80
+day:12  empwage:0
+day:13  empwage:80
+day:14  empwage:0
+day:15  empwage:160
+day:16  empwage:80
+day:17  empwage:0
+day:18  empwage:0
+day:19  empwage:0
+ UC-6array
+0,80,80,80,160,0,0,160,0,0,0,80,0,80,0,160,80,0,0,0
+ UC4 Total hrs:48Emp wage: 960
+UC5 - total-days:10     total_hrs48     emp wage: 960
+
+UC6 - total-days:4      total_hrs204    emp wage: 4080
+UC7A- TotalDay: 4 Total hrs: 204 EmployeeWage:960
+UC7A -Emp Wage with reduce: 960
+uc7B daily wage map
+[
+  '1 = 0',    '2 = 80',  '3 = 80',
+  '4 = 80',   '5 = 160', '6 = 0',
+  '7 = 0',    '8 = 160', '9 = 0',
+  '10 = 0',   '11 = 0',  '12 = 80',
+  '13 = 0',   '14 = 80', '15 = 0',
+  '16 = 160', '17 = 80', '18 = 0',
+  '19 = 0',   '20 = 0'
+]
+UC7C - daily wage filter when fulltime wage earned
+[ '5 = 160', '8 = 160', '16 = 160' ]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 5 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 9
+Uc8 empwage map totalhrs: 19    TotalWage: 4080
+UC9A-Total Wage Using wage map object:
+19 TotalWage:4080
+UC9A-Total Hours Using Hours map object:
+ 48
+HrsMap:
+0 80 80 80 160 0 0 160 0 0 0 80 0 80 0 160 80 0 0 0
+UC9B-FullTime work days: 4,7,15
+UC9B-PartTime work days: 1,2,3,11,13,16
+UC9B-NonTime work days: 0,5,6,8,9,10,12,14,17,18,19
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:0 Wage:0,
+Employee Wage Details Of Day:1  Hours:4 Wage:80,
+Employee Wage Details Of Day:2  Hours:4 Wage:80,
+Employee Wage Details Of Day:3  Hours:4 Wage:80,
+Employee Wage Details Of Day:4  Hours:8 Wage:160,
+Employee Wage Details Of Day:5  Hours:0 Wage:0,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:8 Wage:160,
+Employee Wage Details Of Day:8  Hours:0 Wage:0,
+Employee Wage Details Of Day:9  Hours:0 Wage:0,
+Employee Wage Details Of Day:10 Hours:0 Wage:0,
+Employee Wage Details Of Day:12 Hours:0 Wage:0,
+Employee Wage Details Of Day:14 Hours:0 Wage:0,
+Employee Wage Details Of Day:16 Hours:4 Wage:80,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
+UC11A- Total Hours Using Object And Seperate Arrow Function: 960
+UC11A- Total Hours Using Object And Seperate Arrow Function: 48
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is PRESENT
+UC2 empwage:0
+EMPWAGE: 160
+day:0   empwage:80
+day:1   empwage:160
+day:2   empwage:160
+day:3   empwage:80
+day:4   empwage:0
+day:5   empwage:160
+day:6   empwage:0
+day:7   empwage:80
+day:8   empwage:0
+day:9   empwage:80
+day:10  empwage:0
+day:11  empwage:0
+day:12  empwage:80
+day:13  empwage:80
+day:14  empwage:80
+day:15  empwage:160
+day:16  empwage:0
+day:17  empwage:0
+day:18  empwage:0
+day:19  empwage:80
+ UC-6array
+80,160,160,80,0,160,0,80,0,80,0,0,80,80,80,160,0,0,0,80
+ UC4 Total hrs:64Emp wage: 1280
+UC5 - total-days:10     total_hrs24     emp wage: 480
+UC6 - total-days:3      total_hrs204    emp wage: 4080
+UC7A- TotalDay: 3 Total hrs: 204 EmployeeWage:1280
+UC7A -Emp Wage with reduce: 1280
+uc7B daily wage map
+[
+  '1 = 80',   '2 = 160', '3 = 160',
+  '4 = 80',   '5 = 0',   '6 = 160',
+  '7 = 0',    '8 = 80',  '9 = 0',
+  '10 = 80',  '11 = 0',  '12 = 0',
+  '13 = 80',  '14 = 80', '15 = 80',
+  '16 = 160', '17 = 0',  '18 = 0',
+  '19 = 0',   '20 = 80'
+]
+UC7C - daily wage filter when fulltime wage earned
+[ '2 = 160', '3 = 160', '6 = 160', '16 = 160' ]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 2 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 12
+Uc8 empwage map totalhrs: 19    TotalWage: 4080
+UC9A-Total Wage Using wage map object:
+19 TotalWage:4080
+UC9A-Total Hours Using Hours map object:
+ 64
+HrsMap:
+80 160 160 80 0 160 0 80 0 80 0 0 80 80 80 160 0 0 0 80
+UC9B-FullTime work days: 1,2,5,15
+UC9B-PartTime work days: 0,3,7,9,12,13,14,19
+UC9B-NonTime work days: 4,6,8,10,11,16,17,18
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:4 Wage:80,
+Employee Wage Details Of Day:1  Hours:8 Wage:160,
+Employee Wage Details Of Day:2  Hours:8 Wage:160,
+Employee Wage Details Of Day:3  Hours:4 Wage:80,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:5  Hours:8 Wage:160,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:4 Wage:80,
+Employee Wage Details Of Day:8  Hours:0 Wage:0,
+Employee Wage Details Of Day:9  Hours:4 Wage:80,
+Employee Wage Details Of Day:10 Hours:0 Wage:0,
+Employee Wage Details Of Day:11 Hours:0 Wage:0,
+Employee Wage Details Of Day:12 Hours:4 Wage:80,
+Employee Wage Details Of Day:13 Hours:4 Wage:80,
+Employee Wage Details Of Day:14 Hours:4 Wage:80,
+Employee Wage Details Of Day:15 Hours:8 Wage:160,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:4 Wage:80
+UC11A- Total Hours Using Object And Seperate Arrow Function: 1280
+UC11A- Total Hours Using Object And Seperate Arrow Function: 64
+UC11B- Show the full workings days using foreach using object and arrow function
+UC11B- Full workings days are:1
+UC11B- Full workings days are:2
+UC11B- Full workings days are:5
+UC11B- Full workings days are:15
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is PRESENT
+UC2 empwage:160
+EMPWAGE: 80
+day:0   empwage:0
+day:1   empwage:80
+day:2   empwage:80
+day:3   empwage:160
+day:4   empwage:160
+day:5   empwage:0
+day:6   empwage:160
+day:7   empwage:160
+day:8   empwage:80
+day:9   empwage:160
+day:10  empwage:0
+day:11  empwage:160
+day:12  empwage:160
+day:13  empwage:80
+day:14  empwage:0
+day:15  empwage:0
+day:16  empwage:0
+day:17  empwage:0
+day:18  empwage:80
+day:19  empwage:160
+ UC-6array
+0,80,80,160,160,0,160,160,80,160,0,160,160,80,0,0,0,0,80,160
+ UC4 Total hrs:84Emp wage: 1680
+UC5 - total-days:10     total_hrs20     emp wage: 400
+160
+160
+160
+UC6 - total-days:2      total_hrs176    emp wage: 3520
+UC7A- TotalDay: 2 Total hrs: 176 EmployeeWage:1680
+UC7A -Emp Wage with reduce: 1680
+uc7B daily wage map
+[
+  '1 = 0',    '2 = 80',   '3 = 80',
+  '4 = 160',  '5 = 160',  '6 = 0',
+  '7 = 160',  '8 = 160',  '9 = 80',
+  '10 = 160', '11 = 0',   '12 = 160',
+  '13 = 160', '14 = 80',  '15 = 0',
+  '16 = 0',   '17 = 0',   '18 = 0',
+  '19 = 80',  '20 = 160'
+]
+UC7C - daily wage filter when fulltime wage earned
+[
+  '4 = 160',  '5 = 160',
+  '7 = 160',  '8 = 160',
+  '10 = 160', '12 = 160',
+  '13 = 160', '20 = 160'
+]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 4 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 13
+Uc8 empwage map totalhrs: 19    TotalWage: 3520
+UC9A-Total Wage Using wage map object:
+19 TotalWage:3520
+UC9A-Total Hours Using Hours map object:
+ 84
+HrsMap:
+0 80 80 160 160 0 160 160 80 160 0 160 160 80 0 0 0 0 80 160
+UC9B-FullTime work days: 3,4,6,7,9,11,12,19
+UC9B-PartTime work days: 1,2,8,13,18
+UC9B-NonTime work days: 0,5,10,14,15,16,17
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:0 Wage:0,
+Employee Wage Details Of Day:1  Hours:4 Wage:80,
+Employee Wage Details Of Day:2  Hours:4 Wage:80,
+Employee Wage Details Of Day:3  Hours:8 Wage:160,
+Employee Wage Details Of Day:4  Hours:8 Wage:160,
+Employee Wage Details Of Day:5  Hours:0 Wage:0,
+Employee Wage Details Of Day:6  Hours:8 Wage:160,
+Employee Wage Details Of Day:7  Hours:8 Wage:160,
+Employee Wage Details Of Day:8  Hours:4 Wage:80,
+Employee Wage Details Of Day:9  Hours:8 Wage:160,
+Employee Wage Details Of Day:10 Hours:0 Wage:0,
+Employee Wage Details Of Day:11 Hours:8 Wage:160,
+Employee Wage Details Of Day:12 Hours:8 Wage:160,
+Employee Wage Details Of Day:13 Hours:4 Wage:80,
+Employee Wage Details Of Day:14 Hours:0 Wage:0,
+Employee Wage Details Of Day:15 Hours:0 Wage:0,
+Employee Wage Details Of Day:16 Hours:0 Wage:0,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:4 Wage:80,
+Employee Wage Details Of Day:19 Hours:8 Wage:160
+UC11A- Total Hours Using Object And Seperate Arrow Function: 1680
+UC11A- Total Hours Using Object And Seperate Arrow Function: 84
+UC11B- Show the full workings days using foreach using object and arrow function
+UC11B- Full workings days are:3
+UC11B- Full workings days are:4
+UC11B- Full workings days are:6
+UC11B- Full workings days are:7
+UC11B- Full workings days are:11
+UC11B- Full workings days are:19
+UC11C- Show the PartTime workings days using Map using object and arrow function
+UC11C- Total PartTime Using Object And Arrow Function:
+Employee Wage Details Of Day:1  Hours:4 Wage:80,
+Employee Wage Details Of Day:2  Hours:4 Wage:80,
+Employee Wage Details Of Day:8  Hours:4 Wage:80,
+Employee Wage Details Of Day:13 Hours:4 Wage:80,
+Employee Wage Details Of Day:18 Hours:4 Wage:80
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js       
+UC1 Employee is PRESENT
+UC2 empwage:0
+EMPWAGE: 80
+day:0   empwage:0
+day:1   empwage:80
+day:2   empwage:0
+day:3   empwage:0
+day:4   empwage:0
+day:5   empwage:80
+day:6   empwage:0
+day:7   empwage:0
+day:8   empwage:80
+day:9   empwage:80
+day:10  empwage:80
+day:11  empwage:0
+day:12  empwage:0
+day:13  empwage:0
+day:14  empwage:0
+day:15  empwage:0
+day:16  empwage:160
+day:17  empwage:0
+day:18  empwage:0
+day:19  empwage:0
+ UC-6array
+0,80,0,0,0,80,0,0,80,80,80,0,0,0,0,0,160,0,0,0
+ UC4 Total hrs:28Emp wage: 560
+UC5 - total-days:10     total_hrs36     emp wage: 720
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+UC6 - total-days:6      total_hrs184    emp wage: 3680
+UC7A- TotalDay: 6 Total hrs: 184 EmployeeWage:560
+UC7A -Emp Wage with reduce: 560
+uc7B daily wage map
+[
+  '1 = 0',   '2 = 80',   '3 = 0',
+  '4 = 0',   '5 = 0',    '6 = 80',
+  '7 = 0',   '8 = 0',    '9 = 80',
+  '10 = 80', '11 = 80',  '12 = 0',
+  '13 = 0',  '14 = 0',   '15 = 0',
+  '16 = 0',  '17 = 160', '18 = 0',
+  '19 = 0',  '20 = 0'
+]
+UC7C - daily wage filter when fulltime wage earned
+[ '17 = 160' ]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 17 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 6
+Uc8 empwage map totalhrs: 19    TotalWage: 3680
+UC9A-Total Wage Using wage map object:
+19 TotalWage:3680
+UC9A-Total Hours Using Hours map object:
+ 28
+HrsMap:
+0 80 0 0 0 80 0 0 80 80 80 0 0 0 0 0 160 0 0 0
+UC9B-FullTime work days: 16
+UC9B-PartTime work days: 1,5,8,9,10
+UC9B-NonTime work days: 0,2,3,4,6,7,11,12,13,14,15,17,18,19
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:0 Wage:0,
+Employee Wage Details Of Day:1  Hours:4 Wage:80,
+Employee Wage Details Of Day:2  Hours:0 Wage:0,
+Employee Wage Details Of Day:3  Hours:0 Wage:0,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:5  Hours:4 Wage:80,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:0 Wage:0,
+Employee Wage Details Of Day:8  Hours:4 Wage:80,
+Employee Wage Details Of Day:9  Hours:4 Wage:80,
+Employee Wage Details Of Day:10 Hours:4 Wage:80,
+Employee Wage Details Of Day:11 Hours:0 Wage:0,
+Employee Wage Details Of Day:12 Hours:0 Wage:0,
+Employee Wage Details Of Day:13 Hours:0 Wage:0,
+Employee Wage Details Of Day:14 Hours:0 Wage:0,
+Employee Wage Details Of Day:15 Hours:0 Wage:0,
+Employee Wage Details Of Day:16 Hours:8 Wage:160,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
+UC11A- Total Hours Using Object And Seperate Arrow Function: 560
+UC11A- Total Hours Using Object And Seperate Arrow Function: 28
+UC11B- Show the full workings days using foreach using object and arrow function
+UC11B- Full workings days are:16
+UC11C- Show the PartTime workings days using Map using object and arrow function
+UC11C- Total PartTime Using Object And Arrow Function:
+Employee Wage Details Of Day:1  Hours:4 Wage:80,
+Employee Wage Details Of Day:5  Hours:4 Wage:80,
+Employee Wage Details Of Day:8  Hours:4 Wage:80,
+Employee Wage Details Of Day:9  Hours:4 Wage:80,
+Employee Wage Details Of Day:10 Hours:4 Wage:80
+UC11D- Show the Non workings days using Map function
+UC11D- Non workings days using Map function:
+Employee Wage Details Of Day:0  Hours:0 Wage:0,
+Employee Wage Details Of Day:2  Hours:0 Wage:0,
+Employee Wage Details Of Day:3  Hours:0 Wage:0,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:0 Wage:0,
+Employee Wage Details Of Day:11 Hours:0 Wage:0,
+Employee Wage Details Of Day:12 Hours:0 Wage:0,
+Employee Wage Details Of Day:13 Hours:0 Wage:0,
+Employee Wage Details Of Day:14 Hours:0 Wage:0,
+Employee Wage Details Of Day:15 Hours:0 Wage:0,
+Employee Wage Details Of Day:17 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js
+UC1 Employee is Absent
+PS G:\FellowShip517\Day38_WebIntroEmployeeWagw\WebIntroEmployeeWage\WebIntroEmployeeWage\js> node .\EmployeeWage.js
+UC1 Employee is PRESENT
+UC2 empwage:0      
+EMPWAGE: 80        
+day:0   empwage:160
+day:1   empwage:160
+day:2   empwage:160
+day:3   empwage:0  
+day:4   empwage:0  
+day:5   empwage:0  
+day:6   empwage:0  
+day:7   empwage:0  
+day:8   empwage:160
+day:9   empwage:0  
+day:10  empwage:80 
+day:11  empwage:0  
+day:12  empwage:80 
+day:13  empwage:0  
+day:14  empwage:80 
+day:15  empwage:0
+day:16  empwage:0
+day:17  empwage:80
+day:18  empwage:0
+day:19  empwage:0
+ UC-6array
+160,160,160,0,0,0,0,0,160,0,80,0,80,0,80,0,0,80,0,0
+ UC4 Total hrs:48Emp wage: 960
+UC5 - total-days:10     total_hrs44     emp wage: 880
+UC6 - total-days:4      total_hrs204    emp wage: 4080
+UC7A- TotalDay: 4 Total hrs: 204 EmployeeWage:960
+UC7A -Emp Wage with reduce: 960
+uc7B daily wage map
+[
+  '1 = 160', '2 = 160', '3 = 160',
+  '4 = 0',   '5 = 0',   '6 = 0',
+  '7 = 0',   '8 = 0',   '9 = 160',
+  '10 = 0',  '11 = 80', '12 = 0',
+  '13 = 80', '14 = 0',  '15 = 80',
+  '16 = 0',  '17 = 0',  '18 = 80',
+  '19 = 0',  '20 = 0'
+]
+UC7C - daily wage filter when fulltime wage earned
+[ '1 = 160', '2 = 160', '3 = 160', '9 = 160' ]
+uc7D find the first occurence when full time wage was earned using fine fuctionfunction 1 = 160
+UC7E-check if the every element of fulltime wage is truly holding full time wage: true
+UC7-f check if there any parttime wage: true
+UC7-G find the number of days the employee worked: 8
+Uc8 empwage map totalhrs: 19    TotalWage: 4080
+UC9A-Total Wage Using wage map object:
+19 TotalWage:4080
+UC9A-Total Hours Using Hours map object:
+ 48
+HrsMap:
+160 160 160 0 0 0 0 0 160 0 80 0 80 0 80 0 0 80 0 0
+UC9B-FullTime work days: 0,1,2,8
+UC9B-PartTime work days: 10,12,14,17
+UC9B-NonTime work days: 3,4,5,6,7,9,11,13,15,16,18,19
+UC10-Js Object Used to store the Day, Hours Worked and Wage Earned
+
+Employee Wage Details Of Day:0  Hours:8 Wage:160,
+Employee Wage Details Of Day:1  Hours:8 Wage:160,
+Employee Wage Details Of Day:2  Hours:8 Wage:160,
+Employee Wage Details Of Day:3  Hours:0 Wage:0,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:5  Hours:0 Wage:0,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:0 Wage:0,
+Employee Wage Details Of Day:8  Hours:8 Wage:160,
+Employee Wage Details Of Day:9  Hours:0 Wage:0,
+Employee Wage Details Of Day:10 Hours:4 Wage:80,
+Employee Wage Details Of Day:11 Hours:0 Wage:0,
+Employee Wage Details Of Day:12 Hours:4 Wage:80,
+Employee Wage Details Of Day:13 Hours:0 Wage:0,
+Employee Wage Details Of Day:14 Hours:4 Wage:80,
+Employee Wage Details Of Day:15 Hours:0 Wage:0,
+Employee Wage Details Of Day:16 Hours:0 Wage:0,
+Employee Wage Details Of Day:17 Hours:4 Wage:80,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
+UC11A- Total Hours Using Object And Seperate Arrow Function: 960
+UC11A- Total Hours Using Object And Seperate Arrow Function: 48
+UC11B- Show the full workings days using foreach using object and arrow function
+UC11B- Full workings days are:0
+UC11B- Full workings days are:1
+UC11B- Full workings days are:2
+UC11B- Full workings days are:8
+UC11C- Show the PartTime workings days using Map using object and arrow function
+UC11C- Total PartTime Using Object And Arrow Function:
+Employee Wage Details Of Day:10 Hours:4 Wage:80,
+Employee Wage Details Of Day:12 Hours:4 Wage:80,
+Employee Wage Details Of Day:14 Hours:4 Wage:80,
+Employee Wage Details Of Day:17 Hours:4 Wage:80
+UC11D- Show the Non workings days using Map function
+UC11D- Non workings days using Map function:
+Employee Wage Details Of Day:3  Hours:0 Wage:0,
+Employee Wage Details Of Day:4  Hours:0 Wage:0,
+Employee Wage Details Of Day:5  Hours:0 Wage:0,
+Employee Wage Details Of Day:6  Hours:0 Wage:0,
+Employee Wage Details Of Day:7  Hours:0 Wage:0,
+Employee Wage Details Of Day:9  Hours:0 Wage:0,
+Employee Wage Details Of Day:11 Hours:0 Wage:0,
+Employee Wage Details Of Day:13 Hours:0 Wage:0,
+Employee Wage Details Of Day:15 Hours:0 Wage:0,
+Employee Wage Details Of Day:16 Hours:0 Wage:0,
+Employee Wage Details Of Day:18 Hours:0 Wage:0,
+Employee Wage Details Of Day:19 Hours:0 Wage:0
