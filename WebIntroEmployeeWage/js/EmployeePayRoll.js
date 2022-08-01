@@ -27,6 +27,37 @@ class EmployeePayRollData
         //console.log("To set the name: "+name)
         this._name=name;
     }
+    //validating salary
+    get salary() { return this._salary };
+    set salary(salary) 
+        {
+            let salaryPattern = new RegExp('^[1-9][0-9]*$');
+            if(salaryPattern.test(salary))
+                this._salary = salary;
+            else
+                throw "The Given Salary Is Invalid";
+        }
+    //validating gender
+    get gender() { return this._gender };
+    set gender(gender)
+        {
+            let genderPattern = new RegExp('M|F');
+            if(genderPattern.test(gender))
+                this._gender=gender;
+            else
+                throw "The Given Gender Is Not Correct";
+        }
+    //Validate start date is not future date
+    get startDate(){ return this._startDate };
+    set startDate(startDate)
+        {
+            let todayDate = new Date();
+            if(startDate <= todayDate)
+                this._startDate = startDate;
+            else
+                throw "The Given Date Is Greater Than Current Date";
+        }
+
     //method
     toString()
     {
@@ -38,17 +69,25 @@ class EmployeePayRollData
 }
 //UC13
 //Created obj for class using parameterized conbstructor
-let employePayrollData=new EmployeePayRollData(1, "Janardhana",90876,"M",new Date());
-console.log(employePayrollData.toString());
+//UC14 Ability to check the employee id and salary are non zero positive number, the gender is M or F and date is not a future date   
 try{
-    employePayrollData.name="Jonny";
+    let employePayrollData=new EmployeePayRollData(1, "Janardhana",90876,"M",new Date());
     console.log(employePayrollData.toString());
-    
 }
 catch(e)
 {
     console.error(e);
 }
+// try{
+//     employePayrollData.name="Jonny";
+//     console.log(employePayrollData.toString());
+    
+// }
+// catch(e)
+// {
+//     console.error(e);
+// }
+
 // //if want to change the name and id
 // employePayrollData.id=0;
 // employePayrollData.name="jonny"
