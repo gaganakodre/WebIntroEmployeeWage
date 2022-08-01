@@ -52,15 +52,32 @@ empWage=empHrs * WAGE_PER_HOURS;
 console.log("EMPWAGE: "+empWage);
 
 ////////////UC4-Calculate wage for a month assuming 20 working days////////
-NUM_OF_WORKING_DAYS=2;
+NUM_OF_WORKING_DAYS=20;
 empHrs=0;
+empWageo=0;
+empArray=new Array();
 for(let day=0;day<NUM_OF_WORKING_DAYS;day++)
 {
     empCheck=Math.floor(Math.random() * 10) % 3;
-    empHrs+=getWorkingHours(empCheck); 
+    empHrs+=getWorkingHours(empCheck);
+    empHours=getWorkingHours(empCheck); 
+    empWageo=empHours*WAGE_PER_HOURS;
+    console.log("day:"+day+"\tempwage:"+(empWageo));
+    empArray.push(empWageo)
 }
+console.log(" UC-6array");
+//console.log(empArray.forEach(displaywage));
+empArray.forEach(function(empWageo) {
+    
+});
+console.log(empArray.toString());
 empWage=empHrs*WAGE_PER_HOURS;
 console.log(" UC4 Total hrs:"+ +empHrs+ "Emp wage: " + empWage);
+function displaywage(empWageo)
+{
+    console.log("\tdailywage:"+empWageo)
+
+}
 ///Uc5-Calculating till mmamximum working hours and days reaches using while loop//////////
 MAX_HRS_IN_MONTH=100;
 NUM_OF_WORKING_DAYS=10;
@@ -68,9 +85,11 @@ let totalEmpHrs=0;
 let totalWorkingDays=0;
 while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
 {
+
     totalWorkingDays++;
-    empCheck=Math.floor(Math.random() * 10) % 3;
+    empCheck=Math.floor(Math.random()*10) % 3;
     totalEmpHrs+=getWorkingHours(empCheck);
+    empWage3=totalEmpHrs*20;
 }
 empWage=totalEmpHrs*WAGE_PER_HOURS;
 console.log("UC5 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
@@ -91,7 +110,13 @@ while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
     empCheck=Math.floor(Math.random() * 10) % 3;
     totalEmpHrs+=getWorkingHours(empCheck);
     totalEmpHrs+=empHrs;
-    empDailyWageArray.push(calcDailyWage(empHrs));
+    res=calcDailyWage(empHours)
+    empDailyWageArray.push(calcDailyWage(empHours));
+    empDailyWageArray.forEach(display)
+}
+function display(item)
+{
+    console.log(item)
 }
 empWage=totalEmpHrs*WAGE_PER_HOURS;
 console.log("UC6 - total-days:" + totalWorkingDays + "\ttotal_hrs" + totalEmpHrs + "\temp wage: " + empWage);
@@ -118,6 +143,40 @@ function mapDayWithWage(dailyWage)
     return dailyCntr + " = " + dailyWage;
 }
 //map fuction will create new array from calling a fuction every array elements//
-let mapDayWithWageArr = empDailyWageArray.map(mapDayWithWage);
+let mapDayWithWageArr = empArray.map(mapDayWithWage);
 console.log("uc7B daily wage map");
 console.log(mapDayWithWageArr);
+///UC7C_Show days when full time wage of 160 were earned///////
+function fulltimeWage(dailyWage)
+{//it returns true if the specified string is present in he array
+    return dailyWage.includes("160");
+}//filter it will creates new array filled with the elements from fulltimewage fuction
+let fulltimeWageArr=mapDayWithWageArr.filter(fulltimeWage);
+console.log("UC7C - daily wage filter when fulltime wage earned");
+console.log(fulltimeWageArr);
+///uc7Dfind the first occurence when full time wage was earned using fine fuctionfunction//// 
+function findFullTimeWage(dailyWage)
+{
+    return dailyWage.includes("160")
+}
+console.log("uc7D find the first occurence when full time wage was earned using fine fuctionfunction "+mapDayWithWageArr.find(findFullTimeWage));
+///UC7E-check if the every element of fulltime wage is truly holding full time wage///
+//it will return true or false////
+function isFullTimeWage(dailyWage)
+{
+    return dailyWage.includes("160")
+}
+console.log("UC7E-check if the every element of fulltime wage is truly holding full time wage: "+fulltimeWageArr.every(isFullTimeWage));
+//UC7-f check if there any parttime wage//
+function isanyPartTimeWage(dailyWage)
+{
+    return dailyWage.includes("80")
+}
+console.log("UC7-f check if there any parttime wage: "+mapDayWithWageArr.some(isanyPartTimeWage));
+//UC7-G find the number of days the employee worked//
+function totalDaysWorked(NumOfDays,dailyWage)
+{
+    if(dailyWage>0)return NumOfDays + 1;
+    return NumOfDays;
+}
+console.log("UC7-G find the number of days the employee worked: "+empArray.reduce(totalDaysWorked,0));
