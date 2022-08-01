@@ -21,6 +21,7 @@ let empHrs=0;
 //let NUM_OF_WORKING_DAYS=20;//UC8
 let empDailyWageArr1=new Array();
 let empDailyWageMap1=new Map();
+let empWageHoursAndDayArray = new Array(); 
 
 empCheck= Math.floor(Math.random() * 10) % 3;
 switch(empCheck)
@@ -70,6 +71,18 @@ for(day=0;day<NUM_OF_WORKING_DAYS;day++)
     empWageo=empHours*WAGE_PER_HOURS;
     console.log("day:"+day+"\tempwage:"+(empWageo));
     empArray.push(empWageo)
+    empWageHoursAndDayArray.push(//UC10-JS
+        {
+            dayNumOb : day,
+            empHoursOb : getWorkingHours(),
+            wageOb : empWageo,
+            toString()
+            {
+                return "\nEmployee Wage Details Of Day:"+ this.dayNumOb + "Hours:"+this.empHoursOb + "Wage:"+ this.wageOb; 
+            }
+            
+        }
+    );
 }
 console.log(" UC-6array");
 //console.log(empArray.forEach(displaywage));
@@ -212,4 +225,6 @@ empArray.forEach(
 console.log("UC9B-FullTime work days: "+fullWorkingDaysArray);
 console.log("UC9B-PartTime work days: "+partWorkingDaysArray);
 console.log("UC9B-NonTime work days: "+nonWorkingDaysArray);
+///////////////////////////////UC-10 Ability to store the Day, Hours Worked and Wage Earned in a single object.///////////////////////////////
 
+console.log("UC10-Js Object Used to store the Day, Hours Worked and Wage Earned\n"+empWageHoursAndDayArray);
