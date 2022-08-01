@@ -190,4 +190,26 @@ console.log("UC7-G find the number of days the employee worked: "+empArray.reduc
 //day=1;
 empDailyWageMap1.set(day,empWage); 
 console.log("Uc8 empwage map totalhrs: "+(day-1)+"\tTotalWage: "+Array.from(empDailyWageMap1.values()).reduce(totalWages,0));
+console.log("UC9A-Total Wage Using wage map object: \n"+(day-1)+" TotalWage:"+ (Array.from(empDailyWageMap1.values())).filter(wage=>wage>0).reduce(totalWages,0))
+let empDayAndHoursMap = new Map();
+empDayAndHoursMap.set(day,empHrs); 
+console.log("UC9A-Total Hours Using Hours map object: \n "+ (Array.from(empDayAndHoursMap .values())).reduce(totalWages,0));
+///Show the full workings days, part working days and no working days///
+let nonWorkingDaysArray = new Array(); 
+let partWorkingDaysArray = new Array(); 
+let fullWorkingDaysArray = new Array(); 
+console.log("HrsMap:\n"+(Array.from(empArray.values())).join(" "))
+empArray.forEach(    
+    (value,key,map) => 
+    {
+        if( value == 160 ) 
+        fullWorkingDaysArray.push(key);
+        else if( value == 80 ) 
+        partWorkingDaysArray.push(key);
+        else 
+        nonWorkingDaysArray.push(key);
+})
+console.log("UC9B-FullTime work days: "+fullWorkingDaysArray);
+console.log("UC9B-PartTime work days: "+partWorkingDaysArray);
+console.log("UC9B-NonTime work days: "+nonWorkingDaysArray);
 
