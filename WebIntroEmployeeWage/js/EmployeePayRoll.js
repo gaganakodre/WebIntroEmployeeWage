@@ -78,22 +78,7 @@ catch(e)
 {
     console.error(e);
 }
-// try{
-//     employePayrollData.name="Jonny";
-//     console.log(employePayrollData.toString());
-    
-// }
-// catch(e)
-// {
-//     console.error(e);
-// }
 
-// //if want to change the name and id
-// employePayrollData.id=0;
-// employePayrollData.name="jonny"
-// console.log(employePayrollData.toString());
-// employePayrollData=new EmployeePayRollData(1, "janardhana",90876,"M",new Date());
-// console.log(employePayrollData.toString())
 
 
 
