@@ -17,6 +17,11 @@ const PART_TIME_HRS=4;
 const FULL_TIME_HRS=8;
 const WAGE_PER_HOURS=20;
 let empHrs=0;
+//const MAX_HRS_IN_MONTH=160;//UC8
+//let NUM_OF_WORKING_DAYS=20;//UC8
+let empDailyWageArr1=new Array();
+let empDailyWageMap1=new Map();
+
 empCheck= Math.floor(Math.random() * 10) % 3;
 switch(empCheck)
 {
@@ -56,7 +61,8 @@ NUM_OF_WORKING_DAYS=20;
 empHrs=0;
 empWageo=0;
 empArray=new Array();
-for(let day=0;day<NUM_OF_WORKING_DAYS;day++)
+let day=0;
+for(day=0;day<NUM_OF_WORKING_DAYS;day++)
 {
     empCheck=Math.floor(Math.random() * 10) % 3;
     empHrs+=getWorkingHours(empCheck);
@@ -128,13 +134,13 @@ function sum(dailyWage)
     totEmpWage+=dailyWage;
 
 }
-empDailyWageArray.forEach(sum);
+empArray.forEach(sum);
 console.log("UC7A- TotalDay: " +totalWorkingDays + " Total hrs: " + totalEmpHrs +" EmployeeWage:" +totEmpWage);
-function totalWages(totalWage, dailyWage)
+function totalWages(totalWage, empWage)
 {
-    return totalWage + dailyWage;
+    return totalWage +=empWage;
 }///reduce it will reduce array into single value
-console.log("UC7A -Emp Wage with reduce: " +empDailyWageArray.reduce(totalWages,0));
+console.log("UC7A -Emp Wage with reduce: " +empArray.reduce(totalWages,0));
 //UC7_B shiw the day along wiht daily wage using array map helper fuction////
 let dailyCntr=0;
 function mapDayWithWage(dailyWage)
@@ -180,3 +186,8 @@ function totalDaysWorked(NumOfDays,dailyWage)
     return NumOfDays;
 }
 console.log("UC7-G find the number of days the employee worked: "+empArray.reduce(totalDaysWorked,0));
+//UC8-refactor the uc7 and uc8//
+//day=1;
+empDailyWageMap1.set(day,empWage); 
+console.log("Uc8 empwage map totalhrs: "+(day-1)+"\tTotalWage: "+Array.from(empDailyWageMap1.values()).reduce(totalWages,0));
+
