@@ -8,11 +8,13 @@ class EmployeePayRollData
     startDate;
 
     //constructor
-    constructor(id,name,salary)
+    constructor(...params)
     {
-        this.id=id;
-        this.name=name;
-        this.salary=salary;
+        this.id=params[0];
+        this.name=params[1];
+        this.salary=params[2];
+        this.gender=params[3];
+        this.startDate=params[4]
     }
     //getter and setter
     //using getter and seeter we can acess name and we can apply logic here also
